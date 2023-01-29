@@ -92,7 +92,6 @@ def edit_entry(request, entry_id):
     context = {'entry': entry, 'topic': topic, 'form': form}
     return render(request, 'learning_logs/edit_entry.html', context)
 
-
-
-
-
+@login_required
+def profile(request):
+    return render(request, 'learning_logs/profile.html')

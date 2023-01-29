@@ -19,13 +19,13 @@
       <a class="navbar-brand" href="{% url 'learning_logs:topics' %}">
           Topics
       </a>
+      <a class="navbar-brand" href="{% url 'learning_logs:profile' %}">
+          Profile
+      </a>
 
 
           <ul class="navbar-nav ml-auto">
             {% if user.is_authenticated %}
-              <li class="nav-item">
-                <span class="navbar-text">Hello, {{ user.username }}</span>
-              </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'users:logout' %}">Log out</a>
             </li>
@@ -40,9 +40,8 @@
   </nav>
 
   <main role="main" class="container">
-    <div class="pb-2 mb-2 border-bottom">
+
       {% block page_header %}{% endblock page_header %}
-    </div>
     <div>
       {% block content %}{% endblock content %}
     </div>
